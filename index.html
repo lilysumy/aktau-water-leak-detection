@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaterGuard - Система отчётности об утечках воды Актау</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-droplet"></i>
+                <span>WaterGuard Актау</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#features">Возможности</a></li>
+                <li><a href="#how-it-works">Как это работает</a></li>
+                <li><a href="#report">Сообщить об утечке</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Сохраним воду Актау вместе</h1>
+            <p>Быстро сообщайте об утечках через фото, звук или карту. ИИ определит масштаб проблемы и передаст данные специалистам.</p>
+            <button class="btn btn-primary" onclick="scrollToReport()">Сообщить об утечке</button>
+        </div>
+        <div class="hero-image">
+            <i class="fas fa-water"></i>
+        </div>
+    </section>
+
+    <!-- Facts Section -->
+    <section class="facts">
+        <div class="container">
+            <div class="fact-card">
+                <div class="number">25-30%</div>
+                <p>воды теряется из-за утечек</p>
+            </div>
+            <div class="fact-card">
+                <div class="number">$$$</div>
+                <p>экономия на опреснении</p>
+            </div>
+            <div class="fact-card">
+                <div class="number">⚡</div>
+                <p>быстрое реагирование служб</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Возможности платформы</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Фотография лужи</h3>
+                    <p>Сделайте снимок подозрительного места и ИИ проанализирует вероятность утечки</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-microphone"></i>
+                    <h3>Запись звука</h3>
+                    <p>Запишите необычные звуки из подвала или стены. Система распознает звуки утечек</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-map-location-dot"></i>
+                    <h3>Геолокация</h3>
+                    <p>Отметьте место на карте Актау для точного определения адреса утечки</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>ИИ-анализ</h3>
+                    <p>Искусственный интеллект определяет масштаб проблемы и приоритет реагирования</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bell"></i>
+                    <h3>Уведомления</h3>
+                    <p>Получайте обновления о статусе вашего отчёта в реальном времени</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Статистика</h3>
+                    <p>Общая статистика по утечкам помогает планировать ремонт инфраструктуры</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>Как это работает</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Обнаружение</h3>
+                    <p>Житель замечает признаки утечки: лужу, влажные пятна или необычные звуки</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Регистрация</h3>
+                    <p>Открывает приложение и отправляет фото, звук или указывает место на карте</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>ИИ-анализ</h3>
+                    <p>Система анализирует данные и определяет вероятность и масштаб утечки</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Распределение</h3>
+                    <p>Отчёт автоматически передаётся в соответствующие службы по приоритету</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Мониторинг</h3>
+                    <p>Житель получает уведомления о статусе и результатах устранения утечки</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Section -->
+    <section id="report" class="report-section">
+        <div class="container">
+            <h2>Сообщить об утечке воды</h2>
+            <form class="report-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Адрес или описание места</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Описание проблемы</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="severity">Масштаб утечки (по вашей оценке)</label>
+                    <select id="severity" name="severity" required>
+                        <option value="">Выберите...</option>
+                        <option value="small">Малая (лужа небольшого размера)</option>
+                        <option value="medium">Средняя (значительная влажность)</option>
+                        <option value="large">Крупная (большой объём воды)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="photo">Фотография утечки</label>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+                    <div id="photo-preview"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="audio">Запись звука (если есть)</label>
+                    <input type="file" id="audio" name="audio" accept="audio/*">
+                    <button type="button" class="btn btn-secondary" onclick="startRecording()">
+                        <i class="fas fa-microphone"></i> Начать запись
+                    </button>
+                    <div id="recording-status"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Местоположение</label>
+                    <div id="map" style="height: 300px; width: 100%; border-radius: 8px; background: #f0f0f0;"></div>
+                    <input type="hidden" id="latitude" name="latitude">
+                    <input type="hidden" id="longitude" name="longitude">
+                    <button type="button" class="btn btn-secondary" onclick="getLocation()">
+                        <i class="fas fa-location-crosshairs"></i> Определить местоположение
+                    </button>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">
+                    <i class="fas fa-paper-plane"></i> Отправить отчёт
+                </button>
+            </form>
+
+            <div id="success-message" class="success-message" style="display:none;">
+                <i class="fas fa-check-circle"></i>
+                <h3>Спасибо за отчёт!</h3>
+                <p>Ваш отчёт передан специалистам. Номер вашего обращения: <strong id="report-id"></strong></p>
+                <p>Вы получите уведомление о статусе в течение 24 часов</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <h2>Результаты работы системы</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number" id="stat-reports">0</div>
+                    <p>Отчётов подано</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="stat-resolved">0</div>
+                    <p>Утечек устранено</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="stat-water-saved">0</div>
+                    <p>Кубов воды сэкономлено</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="stat-time-saved">0</div>
+                    <p>Часов сэкономлено на поиск</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 WaterGuard Актау. Сохраняем воду вместе.</p>
+            <p>Для критических ситуаций звоните в аварийную службу: +7 (7292) 42-06-04</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
